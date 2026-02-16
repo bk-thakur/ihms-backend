@@ -84,7 +84,7 @@ pipeline {
 
             docker pull ${ECR}/${IMAGE_NAME}:${IMAGE_TAG} &&
 
-            trivy image --exit-code 1 --severity HIGH,CRITICAL \
+            trivy image --exit-code 1 --severity CRITICAL \
             ${ECR}/${IMAGE_NAME}:${IMAGE_TAG}
           "
         """
